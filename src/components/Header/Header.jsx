@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link,NavLink } from 'react-router-dom';
+import logo from '../../assets/logo.png'
 export default function Header() {
     return (
         <header className="shadow sticky z-50 top-0">
@@ -7,11 +8,11 @@ export default function Header() {
                 <div className="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl">
                     <Link to="/" className="flex items-center">
                         <img
-                            src="todo-removebg-preview.png"
+                            src={logo}
                             className="mr-3 h-12"
                             alt="Logo"
                         />
-                        TaskZen
+                        Edutown
                     </Link>
                     <div className="flex items-center lg:order-2">
                         <Link
@@ -54,6 +55,16 @@ export default function Header() {
                             </li>
                             <li>
                                 <NavLink
+                                to="/github"
+                                    className={({isActive}) =>
+                                        `block py-2 pr-4 pl-3 duration-200 ${isActive ? "text-blue-700" : "text-gray-700"} border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 hover:text-orange-700 lg:p-0`
+                                    }
+                                >
+                                    Explore
+                                </NavLink>
+                            </li>
+                            <li>
+                                <NavLink
                                 to="/contactus"
                                     className={({isActive}) =>
                                         `block py-2 pr-4 pl-3 duration-200 ${isActive ? "text-blue-700" : "text-gray-700"} border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 hover:text-orange-700 lg:p-0`
@@ -69,7 +80,7 @@ export default function Header() {
                                         `block py-2 pr-4 pl-3 duration-200 ${isActive ? "text-blue-700" : "text-gray-700"} border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 hover:text-orange-700 lg:p-0`
                                     }
                                 >
-                                    Github
+                                    Courses
                                 </NavLink>
                             </li>
                             

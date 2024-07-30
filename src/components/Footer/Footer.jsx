@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link, NavLink } from 'react-router-dom';
+import logo from '../../assets/logo.png'
 export default function Footer() {
     return (
         <footer className="bg-white border-y">
@@ -8,11 +9,11 @@ export default function Footer() {
                     <div className="mb-6 md:mb-0">
                         <Link to="/" className="flex items-center">
                             <img
-                                src="todo-removebg-preview.png"
+                                src={logo}
                                 className="mr-3 h-16"
                                 alt="Logo"
                             />
-                            TaskZen
+                            Edutown
                         </Link>
                         
                     </div>
@@ -21,14 +22,18 @@ export default function Footer() {
                             <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase">Resources</h2>
                             <ul className="text-gray-500 font-medium">
                                 <li className="mb-4">
-                                    <Link to="/" className="hover:underline">
+                                    <NavLink to="/" className={({isActive}) =>
+                                        ` ${isActive ? "text-blue-700" : "text-gray-700"} border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 hover:text-orange-700 lg:p-0`
+                                    }>
                                         Home
-                                    </Link>
+                                    </NavLink>
                                 </li>
                                 <li>
-                                    <Link to="/about" className="hover:underline">
+                                <NavLink to="/about" className={({isActive}) =>
+                                        ` ${isActive ? "text-blue-700" : "text-gray-700"} border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 hover:text-orange-700 lg:p-0`
+                                    }>
                                         About
-                                    </Link>
+                                    </NavLink>
                                 </li>
                             </ul>
                         </div>
@@ -37,7 +42,7 @@ export default function Footer() {
                             <ul className="text-gray-500 font-medium">
                                 <li className="mb-4">
                                     <a
-                                        href="https://github.com/hiteshchoudhary"
+                                        href="https://github.com/aastik-mehta-22"
                                         className="hover:underline"
                                         target="_blank"
                                         rel="noreferrer"
@@ -72,9 +77,9 @@ export default function Footer() {
                 <hr className="my-6 border-gray-200 sm:mx-auto lg:my-8" />
                 <div className="sm:flex sm:items-center sm:justify-between">
                     <span className="text-sm text-gray-500 sm:text-center">
-                        © 2023
+                        © 2024
                         <a href="https://www.linkedin.com/in/aastik-mehta-145a50258/" className="hover:underline">
-                            aastikmehta
+                            Edutown
                         </a>
                         . All Rights Reserved.
                     </span>
