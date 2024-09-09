@@ -10,6 +10,10 @@ import ContactUs from './components/ContactUs/ContactUs.jsx'
 import Github from './components/Github/Github.jsx'
 import User from './components/User/User.jsx'
 import { githubInfoLoader } from './components/Github/Github.jsx'
+import LandingPage from './components/LandingPage/LandingPage.jsx'
+
+import { ClerkProvider } from '@clerk/clerk-react'
+import Explore from './components/Explore/Explore.jsx'
 
 // const router = createBrowserRouter([
 //   {
@@ -35,20 +39,31 @@ import { githubInfoLoader } from './components/Github/Github.jsx'
 //     ]
 //   }
 // ])
+
+const PUBLISHABLE_KEY = import.meta.env.VITE_CLERK_PUBLISHABLE_KEY
+console.log('Clerk Publishable Key:', import.meta.env.VITE_CLERK_PUBLISHABLE_KEY);
+
+if (!PUBLISHABLE_KEY) {
+  throw new Error("Missing Publishable Key")
+}
+
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path='/' element={<Layout/>}>
-      <Route path='' element={<Home/>}/>
+      <Route path='' element={<LandingPage/>}/>
       <Route path='about' element={<About/>}/>
       <Route path='contactus' element={<ContactUs/>}/>
       <Route loader={githubInfoLoader} path='github' element={<Github/>}/>
-      <Route path='user/:userid' element={<User/>}/>
+      <Route path='user/:userid' element={<User/>}/> 
+      <Route path='explore' element={<Explore/>}/> 
 
     </Route>
   )
 )
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode >
+    <ClerkProvider publishableKey={PUBLISHABLE_KEY} afterSignOutUrl="/">
     <RouterProvider router={router}/>
+    </ClerkProvider>
   </React.StrictMode>,
 )

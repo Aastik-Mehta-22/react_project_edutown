@@ -1,6 +1,8 @@
 import React from 'react'
 import { Link,NavLink } from 'react-router-dom';
 import logo from '../../assets/logo.png'
+import { SignedIn, SignedOut, SignInButton, UserButton } from "@clerk/clerk-react";
+
 export default function Header() {
     return (
         <header className="shadow sticky z-50 top-0">
@@ -19,10 +21,16 @@ export default function Header() {
                             to="#"
                             className="text-gray-800 hover:bg-gray-50 focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 focus:outline-none"
                         >
-                            Log in
+                         
+                         <SignedOut>
+                            <SignInButton />
+                        </SignedOut>
+                        <SignedIn>
+                            <UserButton />
+                        </SignedIn>
                         </Link>
                         <Link
-                            to="#"
+                            to="/explore"
                             className="text-white bg-blue-700  hover:border-blue-700 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 focus:outline-none"
                         >
                             Get started
@@ -55,7 +63,7 @@ export default function Header() {
                             </li>
                             <li>
                                 <NavLink
-                                to="/github"
+                                to="/explore"
                                     className={({isActive}) =>
                                         `block py-2 pr-4 pl-3 duration-200 ${isActive ? "text-blue-700" : "text-gray-700"} border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 hover:text-orange-700 lg:p-0`
                                     }
@@ -73,16 +81,7 @@ export default function Header() {
                                     Contact Us
                                 </NavLink>
                             </li>
-                            <li>
-                                <NavLink
-                                to="/github"
-                                    className={({isActive}) =>
-                                        `block py-2 pr-4 pl-3 duration-200 ${isActive ? "text-blue-700" : "text-gray-700"} border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 hover:text-orange-700 lg:p-0`
-                                    }
-                                >
-                                    Courses
-                                </NavLink>
-                            </li>
+                           
                             
                             
                         </ul>
