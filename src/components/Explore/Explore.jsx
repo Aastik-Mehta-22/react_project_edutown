@@ -1,11 +1,13 @@
 import React from 'react'
 import { SignedIn, SignedOut, SignInButton, UserButton } from "@clerk/clerk-react";
-import Title from '../Title/Title';
-import Card from '../Card/Card';
-import Home from '../Home/Home';
+import ExploreItems from '../ExploreItems/ExploreItems';
+
 
 const Explore = () => {
 
+    const handleRegister = () => {
+        alert('Registred Successfully!');
+      };
   return (
     <>
         <SignedOut>
@@ -16,25 +18,22 @@ const Explore = () => {
             </div>
         </SignedOut>
         <SignedIn>
-                <Title subTitle="Personalized Insights" title="Hand Written Notes" />
-            <div className='flex items-center justify-center mb-6 gap-8 flex-wrap'>
 
-                <Card imageLink="https://static.javatpoint.com/fullformpages/images/dbms-full-form3.png" title="Database Management System" />
-                <Card imageLink="https://dxknuvztu7bsi.cloudfront.net/2561-shutterstock_559459693-scaled-1693197202540.jpg" title="Operating System"/>
-                <Card imageLink="https://chudovo.com/wp-content/uploads/2023/03/reactjs.jpg" title="React.js"/>
-                <Card imageLink="https://chudovo.com/wp-content/uploads/2023/03/reactjs.jpg" title="React.js"/>
-                <Card imageLink="https://chudovo.com/wp-content/uploads/2023/03/reactjs.jpg" title="React.js"/>
-                <Card imageLink="https://chudovo.com/wp-content/uploads/2023/03/reactjs.jpg" title="React.js"/>
-                <Card imageLink="https://chudovo.com/wp-content/uploads/2023/03/reactjs.jpg" title="React.js"/>
-                <Card imageLink="https://chudovo.com/wp-content/uploads/2023/03/reactjs.jpg" title="React.js"/>
-
+            <div className='flex items-center justify-center mb-6 gap-2 flex-wrap'>
+                    <ExploreItems title="Handwritten Notes" navigate="notes" image="https://img.freepik.com/free-photo/creative-composition-world-book-day_23-2148883765.jpg"/>
+                    <ExploreItems title="Courses" navigate="courses" image="https://www.questpond.com/img/2.png"/>
+                
+            </div>
+            <div className='flex items-center justify-center mb-6 gap-2 flex-wrap'>
+                   
+                    <ExploreItems title="Events Updates" navigate="events" image="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSOhDJxqIAosTGOLOY1T14I3ZuCVS-3JJD7Pg&s"/>
+                    <ExploreItems title="Manage Your Tasks" navigate="todos" image="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRAiCDR1aAfYhj1S4CKCLHmE-GKbXTgRviGyw&s"/>
             </div>
 
-                <Home />
-                <Title  title="Events and more" />
-                <div className='flex justify-center mb-3'>Coming soon...</div>
-                <Title  title="Premium Courses" />
-                <div className='flex justify-center mb-3'>Launching soon...</div>
+                
+                
+
+               
 
         </SignedIn>
   </>

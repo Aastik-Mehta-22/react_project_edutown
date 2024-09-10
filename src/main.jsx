@@ -14,6 +14,9 @@ import LandingPage from './components/LandingPage/LandingPage.jsx'
 
 import { ClerkProvider } from '@clerk/clerk-react'
 import Explore from './components/Explore/Explore.jsx'
+import Courses from './components/Courses/Courses.jsx'
+import Events from './components/EventsandMore/Events.jsx'
+import Notes from './components/Notes/Notes.jsx'
 
 // const router = createBrowserRouter([
 //   {
@@ -56,6 +59,10 @@ const router = createBrowserRouter(
       <Route loader={githubInfoLoader} path='github' element={<Github/>}/>
       <Route path='user/:userid' element={<User/>}/> 
       <Route path='explore' element={<Explore/>}/> 
+      <Route path='explore/todos' element={<Home/>}/> 
+      <Route path='explore/notes' element={<Notes/>}/> 
+      <Route path='explore/courses' element={<Courses/>}/> 
+      <Route path='explore/events' element={<Events/>}/> 
 
     </Route>
   )
