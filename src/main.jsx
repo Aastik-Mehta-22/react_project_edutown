@@ -17,6 +17,7 @@ import Explore from './components/Explore/Explore.jsx'
 import Courses from './components/Courses/Courses.jsx'
 import Events from './components/EventsandMore/Events.jsx'
 import Notes from './components/Notes/Notes.jsx'
+import Download from './components/Download/Download.jsx'
 
 // const router = createBrowserRouter([
 //   {
@@ -56,6 +57,7 @@ const router = createBrowserRouter(
       <Route path='' element={<LandingPage/>}/>
       <Route path='about' element={<About/>}/>
       <Route path='contactus' element={<ContactUs/>}/>
+      <Route path='download' element={<Download/>}/>
       <Route loader={githubInfoLoader} path='github' element={<Github/>}/>
       <Route path='user/:userid' element={<User/>}/> 
       <Route path='explore' element={<Explore/>}/> 
