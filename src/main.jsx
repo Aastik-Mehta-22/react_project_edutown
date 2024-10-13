@@ -18,6 +18,9 @@ import Courses from './components/Courses/Courses.jsx'
 import Events from './components/EventsandMore/Events.jsx'
 import Notes from './components/Notes/Notes.jsx'
 import Download from './components/Download/Download.jsx'
+import Roadmaps from './components/Roadmaps/Roadmaps.jsx'
+import Chitkara from './components/Chitkara/Chitkara.jsx'
+import FirstYear from './components/Chitkara/FirstYear.jsx'
 
 // const router = createBrowserRouter([
 //   {
@@ -65,6 +68,9 @@ const router = createBrowserRouter(
       <Route path='explore/notes' element={<Notes/>}/> 
       <Route path='explore/courses' element={<Courses/>}/> 
       <Route path='explore/events' element={<Events/>}/> 
+      <Route path='explore/roadmap' element={<Roadmaps/>}/> 
+      <Route path='explore/chitkara' element={<Chitkara/>}/> 
+      <Route path='explore/chitkara/firstYear' element={<FirstYear/>}/> 
 
     </Route>
   )

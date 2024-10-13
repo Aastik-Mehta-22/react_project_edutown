@@ -5,9 +5,7 @@ import ExploreItems from '../ExploreItems/ExploreItems';
 
 const Explore = () => {
 
-    const handleRegister = () => {
-        alert('Registred Successfully!');
-      };
+  
   return (
     <>
         <SignedOut>
@@ -22,19 +20,13 @@ const Explore = () => {
             <div className='flex items-center justify-center mb-6 gap-2 flex-wrap'>
                     <ExploreItems title="Handwritten Notes" navigate="notes" image="https://img.freepik.com/free-photo/creative-composition-world-book-day_23-2148883765.jpg"/>
                     <ExploreItems title="Courses" navigate="courses" image="https://www.questpond.com/img/2.png"/>
-                
+                    <ExploreItems title="Roadmaps" navigate="roadmap" image="https://thumbs.dreamstime.com/b/roadmap-word-black-letters-white-tiles-92162237.jpg"/>
             </div>
             <div className='flex items-center justify-center mb-6 gap-2 flex-wrap'>
-                   
-                    <ExploreItems title="Events Updates" navigate="events" image="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSOhDJxqIAosTGOLOY1T14I3ZuCVS-3JJD7Pg&s"/>
-                    <ExploreItems title="Manage Your Tasks" navigate="todos" image="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRAiCDR1aAfYhj1S4CKCLHmE-GKbXTgRviGyw&s"/>
+                    <ExploreItems title="For Chitkara Students" navigate="chitkara" image="https://facultytick.com/wp-content/uploads/2022/07/Chitkara-University.jpg"/>
+                    
             </div>
-
-                
-                
-
-               
-
+            
         </SignedIn>
   </>
     

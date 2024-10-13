@@ -1,6 +1,7 @@
 import React from 'react'
 import './Contact.css'
 import Swal from 'sweetalert2'
+import DeveloperCard from './DeveloperCard'
   
 // export default function Contact() {
 //     return (
@@ -145,6 +146,9 @@ import Swal from 'sweetalert2'
 
 
 const ContactUs = () => {
+    const linkedinUrl = 'https://linkedin.com/in/aastik-mehta-145a50258';
+    const instagramUrl = 'https://www.instagram.com/mehta_aastikk/';
+
     const onSubmit = async (event) => {
         event.preventDefault();
         const formData = new FormData(event.target);
@@ -174,6 +178,7 @@ const ContactUs = () => {
       };
 
   return (
+        <>
         <section className='contact'>
             <form onSubmit={onSubmit}>
                 <h2>Contact Form</h2>
@@ -193,6 +198,40 @@ const ContactUs = () => {
                 <button type='submit' id='btncontactus'>Send Message</button>
             </form>
         </section>
+                <div className="flex justify-center items-center mt-8 mb-8">
+            <h2 className="text-xl font-bold mr-10">Follow Us on </h2>
+            <a 
+                href={linkedinUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center bg-white text-black-500 font-semibold py-2 px-4 rounded hover:bg-blue-800 transition duration-300"
+            >
+                <img 
+                src="https://cdn-icons-png.flaticon.com/512/174/174857.png" 
+                alt="LinkedIn Logo" 
+                className="w-5 h-5 mr-2"
+                />
+                LinkedIn
+            </a>
+        <a 
+          href={instagramUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-center bg-white  text-black font-semibold py-2 px-4 rounded hover:bg-[#985b86] transition duration-300"
+        >
+          <img 
+            src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" 
+            alt="Instagram Logo" 
+            className="w-5 h-5 mr-2"
+          />
+          Instagram
+        </a>
+        </div>
+        {/* <div className='flex justify-center mb-8'>
+            <DeveloperCard />
+        </div> */}
+
+        </>
   )
 }
 
